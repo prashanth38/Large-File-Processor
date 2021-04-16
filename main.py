@@ -26,6 +26,6 @@ for df in pd.read_csv(file, chunksize = chunksize, iterator = True):
     
     print('| index : {}'.format(j))
 
-df = pd.read_sql_query('SELECT * FROM data_use', csv_database)
+df = pd.read_sql_query('SELECT DISTINCT name,sku,description FROM data_use ORDER BY sku', csv_database)
 df.columns
 df.head(10)
